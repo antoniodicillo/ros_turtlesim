@@ -1,0 +1,40 @@
+[3.513s] Invoking command in '/home/antonio/Desktop/ros/src/turtle': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/antonio/Desktop/ros/build/turtle/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtle build --build-base /home/antonio/Desktop/ros/build/turtle/build install --record /home/antonio/Desktop/ros/build/turtle/install.log --single-version-externally-managed install_data
+[3.824s] running egg_info
+[3.891s] creating ../../build/turtle/turtle.egg-info
+[4.031s] writing ../../build/turtle/turtle.egg-info/PKG-INFO
+[4.032s] writing dependency_links to ../../build/turtle/turtle.egg-info/dependency_links.txt
+[4.032s] writing entry points to ../../build/turtle/turtle.egg-info/entry_points.txt
+[4.046s] writing requirements to ../../build/turtle/turtle.egg-info/requires.txt
+[4.065s] writing top-level names to ../../build/turtle/turtle.egg-info/top_level.txt
+[4.066s] writing manifest file '../../build/turtle/turtle.egg-info/SOURCES.txt'
+[4.098s] reading manifest file '../../build/turtle/turtle.egg-info/SOURCES.txt'
+[4.108s] adding license file 'LICENSE'
+[4.111s] writing manifest file '../../build/turtle/turtle.egg-info/SOURCES.txt'
+[4.111s] running build
+[4.112s] running build_py
+[4.112s] creating /home/antonio/Desktop/ros/build/turtle/build
+[4.112s] creating /home/antonio/Desktop/ros/build/turtle/build/lib
+[4.112s] creating /home/antonio/Desktop/ros/build/turtle/build/lib/turtle
+[4.112s] copying turtle/turtle.py -> /home/antonio/Desktop/ros/build/turtle/build/lib/turtle
+[4.113s] copying turtle/__init__.py -> /home/antonio/Desktop/ros/build/turtle/build/lib/turtle
+[4.114s] copying turtle/py.typed -> /home/antonio/Desktop/ros/build/turtle/build/lib/turtle
+[4.114s] running install
+[4.117s] running install_lib
+[4.130s] creating /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle
+[4.130s] copying /home/antonio/Desktop/ros/build/turtle/build/lib/turtle/turtle.py -> /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle
+[4.130s] copying /home/antonio/Desktop/ros/build/turtle/build/lib/turtle/py.typed -> /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle
+[4.138s] copying /home/antonio/Desktop/ros/build/turtle/build/lib/turtle/__init__.py -> /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle
+[4.138s] byte-compiling /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle/turtle.py to turtle.cpython-312.pyc
+[4.143s] byte-compiling /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle/__init__.py to __init__.cpython-312.pyc
+[4.143s] running install_data
+[4.143s] creating /home/antonio/Desktop/ros/install/turtle/share/ament_index
+[4.143s] creating /home/antonio/Desktop/ros/install/turtle/share/ament_index/resource_index
+[4.143s] creating /home/antonio/Desktop/ros/install/turtle/share/ament_index/resource_index/packages
+[4.143s] copying resource/turtle -> /home/antonio/Desktop/ros/install/turtle/share/ament_index/resource_index/packages
+[4.143s] copying package.xml -> /home/antonio/Desktop/ros/install/turtle/share/turtle
+[4.143s] running install_egg_info
+[4.159s] Copying ../../build/turtle/turtle.egg-info to /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle-0.0.0-py3.12.egg-info
+[4.161s] running install_scripts
+[4.336s] Installing circle_node script to /home/antonio/Desktop/ros/install/turtle/lib/turtle
+[4.337s] writing list of installed files to '/home/antonio/Desktop/ros/build/turtle/install.log'
+[4.441s] Invoked command in '/home/antonio/Desktop/ros/src/turtle' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/antonio/Desktop/ros/build/turtle/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages: /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/turtle build --build-base /home/antonio/Desktop/ros/build/turtle/build install --record /home/antonio/Desktop/ros/build/turtle/install.log --single-version-externally-managed install_data

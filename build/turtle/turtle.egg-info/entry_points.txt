@@ -1,0 +1,2 @@
+[console_scripts]
+circle_node = turtle.turtle:main

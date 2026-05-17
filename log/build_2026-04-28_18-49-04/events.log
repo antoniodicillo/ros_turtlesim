@@ -1,0 +1,87 @@
+[0.000000] (-) TimerEvent: {}
+[0.001403] (turtle) JobQueued: {'identifier': 'turtle', 'dependencies': OrderedDict()}
+[0.002982] (turtle) JobStarted: {'identifier': 'turtle'}
+[0.096794] (-) TimerEvent: {}
+[0.201044] (-) TimerEvent: {}
+[0.317647] (-) TimerEvent: {}
+[0.418203] (-) TimerEvent: {}
+[0.521930] (-) TimerEvent: {}
+[0.624279] (-) TimerEvent: {}
+[0.724835] (-) TimerEvent: {}
+[0.842642] (-) TimerEvent: {}
+[0.960739] (-) TimerEvent: {}
+[1.062085] (-) TimerEvent: {}
+[1.162995] (-) TimerEvent: {}
+[1.271028] (-) TimerEvent: {}
+[1.372643] (-) TimerEvent: {}
+[1.474305] (-) TimerEvent: {}
+[1.586686] (-) TimerEvent: {}
+[1.687668] (-) TimerEvent: {}
+[1.789075] (-) TimerEvent: {}
+[1.895985] (-) TimerEvent: {}
+[1.999459] (-) TimerEvent: {}
+[2.116195] (-) TimerEvent: {}
+[2.245531] (-) TimerEvent: {}
+[2.362817] (-) TimerEvent: {}
+[2.471111] (-) TimerEvent: {}
+[2.579199] (-) TimerEvent: {}
+[2.687796] (-) TimerEvent: {}
+[2.800423] (-) TimerEvent: {}
+[2.901550] (-) TimerEvent: {}
+[3.006398] (-) TimerEvent: {}
+[3.116061] (-) TimerEvent: {}
+[3.217698] (-) TimerEvent: {}
+[3.323398] (-) TimerEvent: {}
+[3.426039] (-) TimerEvent: {}
+[3.514971] (turtle) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/turtle', 'build', '--build-base', '/home/antonio/Desktop/ros/build/turtle/build', 'install', '--record', '/home/antonio/Desktop/ros/build/turtle/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/antonio/Desktop/ros/src/turtle', 'env': {'PYTHON_BASIC_REPL': '1', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'antonio', 'XDG_SESSION_TYPE': 'wayland', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'HOME': '/home/antonio', 'CHROME_DESKTOP': 'code.desktop', 'OLDPWD': '/home/antonio/Desktop/ros/src', 'TERM_PROGRAM_VERSION': '1.117.0', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '1773', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '1982', 'BUNDLED_DEBUGPY_PATH': '/home/antonio/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy', 'IM_CONFIG_CHECK_ENV': '1', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=91f1472b1c968817d124cb4e69ea57d8', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '41895', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'LOGNAME': 'antonio', 'JOURNAL_STREAM': '9:11093', '_': '/usr/bin/colcon', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'antonio', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'FC_FONTATIONS': '1', 'PATH': '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/antonio/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/scripts/noConfigScripts', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/1982,unix/ubuntu:/tmp/.ICE-unix/1982', 'INVOCATION_ID': 'ffcbf63cb5a5490ababad346695a8d30', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'wayland', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/home/antonio/.vscode/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-daecb2a82784b329.txt', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'PYTHONSTARTUP': '/home/antonio/.config/Code/User/workspaceStorage/6735172e10041d32731612a399d190e4/ms-python.python/pythonrc.py', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.T7A9N3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-3194e2eea0.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/antonio/Desktop/ros/build/turtle', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=91f1472b1c968817d124cb4e69ea57d8', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'PYTHONPATH': '/home/antonio/Desktop/ros/build/turtle/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages:'}, 'shell': False}
+[3.548364] (-) TimerEvent: {}
+[3.651162] (-) TimerEvent: {}
+[3.823729] (turtle) StdoutLine: {'line': b'running egg_info\n'}
+[3.832357] (-) TimerEvent: {}
+[3.868429] (turtle) StdoutLine: {'line': b'creating ../../build/turtle/turtle.egg-info\n'}
+[3.933890] (-) TimerEvent: {}
+[4.010262] (turtle) StdoutLine: {'line': b'writing ../../build/turtle/turtle.egg-info/PKG-INFO\n'}
+[4.034418] (-) TimerEvent: {}
+[4.034569] (turtle) StdoutLine: {'line': b'writing dependency_links to ../../build/turtle/turtle.egg-info/dependency_links.txt\n'}
+[4.035244] (turtle) StdoutLine: {'line': b'writing entry points to ../../build/turtle/turtle.egg-info/entry_points.txt\n'}
+[4.035323] (turtle) StdoutLine: {'line': b'writing requirements to ../../build/turtle/turtle.egg-info/requires.txt\n'}
+[4.048833] (turtle) StdoutLine: {'line': b'writing top-level names to ../../build/turtle/turtle.egg-info/top_level.txt\n'}
+[4.068012] (turtle) StdoutLine: {'line': b"writing manifest file '../../build/turtle/turtle.egg-info/SOURCES.txt'\n"}
+[4.100477] (turtle) StdoutLine: {'line': b"reading manifest file '../../build/turtle/turtle.egg-info/SOURCES.txt'\n"}
+[4.100955] (turtle) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[4.112438] (turtle) StdoutLine: {'line': b"writing manifest file '../../build/turtle/turtle.egg-info/SOURCES.txt'\n"}
+[4.114505] (turtle) StdoutLine: {'line': b'running build\n'}
+[4.114574] (turtle) StdoutLine: {'line': b'running build_py\n'}
+[4.114626] (turtle) StdoutLine: {'line': b'creating /home/antonio/Desktop/ros/build/turtle/build\n'}
+[4.114676] (turtle) StdoutLine: {'line': b'creating /home/antonio/Desktop/ros/build/turtle/build/lib\n'}
+[4.114722] (turtle) StdoutLine: {'line': b'creating /home/antonio/Desktop/ros/build/turtle/build/lib/turtle\n'}
+[4.114769] (turtle) StdoutLine: {'line': b'copying turtle/turtle.py -> /home/antonio/Desktop/ros/build/turtle/build/lib/turtle\n'}
+[4.114816] (turtle) StdoutLine: {'line': b'copying turtle/__init__.py -> /home/antonio/Desktop/ros/build/turtle/build/lib/turtle\n'}
+[4.116578] (turtle) StdoutLine: {'line': b'copying turtle/py.typed -> /home/antonio/Desktop/ros/build/turtle/build/lib/turtle\n'}
+[4.116779] (turtle) StdoutLine: {'line': b'running install\n'}
+[4.119794] (turtle) StdoutLine: {'line': b'running install_lib\n'}
+[4.132788] (turtle) StdoutLine: {'line': b'creating /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle\n'}
+[4.133038] (turtle) StdoutLine: {'line': b'copying /home/antonio/Desktop/ros/build/turtle/build/lib/turtle/turtle.py -> /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle\n'}
+[4.133133] (turtle) StdoutLine: {'line': b'copying /home/antonio/Desktop/ros/build/turtle/build/lib/turtle/py.typed -> /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle\n'}
+[4.140458] (turtle) StdoutLine: {'line': b'copying /home/antonio/Desktop/ros/build/turtle/build/lib/turtle/__init__.py -> /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle\n'}
+[4.140896] (-) TimerEvent: {}
+[4.141308] (turtle) StdoutLine: {'line': b'byte-compiling /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle/turtle.py to turtle.cpython-312.pyc\n'}
+[4.145413] (turtle) StdoutLine: {'line': b'byte-compiling /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle/__init__.py to __init__.cpython-312.pyc\n'}
+[4.145808] (turtle) StdoutLine: {'line': b'running install_data\n'}
+[4.145877] (turtle) StdoutLine: {'line': b'creating /home/antonio/Desktop/ros/install/turtle/share/ament_index\n'}
+[4.145935] (turtle) StdoutLine: {'line': b'creating /home/antonio/Desktop/ros/install/turtle/share/ament_index/resource_index\n'}
+[4.145985] (turtle) StdoutLine: {'line': b'creating /home/antonio/Desktop/ros/install/turtle/share/ament_index/resource_index/packages\n'}
+[4.146036] (turtle) StdoutLine: {'line': b'copying resource/turtle -> /home/antonio/Desktop/ros/install/turtle/share/ament_index/resource_index/packages\n'}
+[4.146088] (turtle) StdoutLine: {'line': b'copying package.xml -> /home/antonio/Desktop/ros/install/turtle/share/turtle\n'}
+[4.146138] (turtle) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.160550] (turtle) StdoutLine: {'line': b'Copying ../../build/turtle/turtle.egg-info to /home/antonio/Desktop/ros/install/turtle/lib/python3.12/site-packages/turtle-0.0.0-py3.12.egg-info\n'}
+[4.163446] (turtle) StdoutLine: {'line': b'running install_scripts\n'}
+[4.241667] (-) TimerEvent: {}
+[4.339327] (turtle) StdoutLine: {'line': b'Installing circle_node script to /home/antonio/Desktop/ros/install/turtle/lib/turtle\n'}
+[4.340228] (turtle) StdoutLine: {'line': b"writing list of installed files to '/home/antonio/Desktop/ros/build/turtle/install.log'\n"}
+[4.341895] (-) TimerEvent: {}
+[4.428138] (turtle) CommandEnded: {'returncode': 0}
+[4.446056] (-) TimerEvent: {}
+[4.503479] (turtle) JobEnded: {'identifier': 'turtle', 'rc': 0}
+[4.557155] (-) TimerEvent: {}
+[4.557423] (-) EventReactorShutdown: {}
