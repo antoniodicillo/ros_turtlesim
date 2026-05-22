@@ -1,129 +1,94 @@
-#!/usr/bin/env python3
+"""No ROS 2 que desenha o contorno extraido da imagem no turtlesim.
 
-import rospy
-import cv2
-import numpy as np
+A pipeline de visao (notebook) gera `pontos.json`: uma lista ordenada de
+coordenadas (x, y) ja no espaco do turtlesim. Este no apenas carrega esses
+pontos e usa os servicos do turtlesim para desenhar:
 
-from geometry_msgs.msg import Twist
-from turtlesim.msg import Pose
+- /turtle1/set_pen          -> liga/desliga a caneta (e define cor/espessura)
+- /turtle1/teleport_absolute-> move a tartaruga direto para uma posicao (x, y)
 
-pose = None
+Desenhamos com teleport (em vez de cmd_vel) porque o caminho ja esta em ordem
+e queremos um traco fiel ao contorno, sem o erro acumulado de um controlador
+de velocidade.
+"""
+
+import json
+import os
+
+import rclpy
+from rclpy.node import Node
+from ament_index_python.packages import get_package_share_directory
+
+# No ROS 2 Humble os servicos do turtlesim ficam no pacote `turtlesim`.
+from turtlesim.srv import SetPen, TeleportAbsolute
 
 
-def pose_callback(msg):
-    global pose
-    pose = msg
+class TurtleController(Node):
+
+    def __init__(self):
+        super().__init__('turtle_controller')
+
+        # 1. Carrega os pontos gerados pela pipeline (instalados junto do pacote)
+        caminho = os.path.join(
+            get_package_share_directory('turtle_draw'), 'pontos.json')
+        with open(caminho, 'r') as arquivo:
+            self.pontos = json.load(arquivo)['pontos']
+        self.get_logger().info(f'{len(self.pontos)} pontos carregados de {caminho}')
+
+        # 2. Cria os clientes dos servicos e espera o turtlesim estar no ar
+        self.cliente_caneta = self.create_client(SetPen, '/turtle1/set_pen')
+        self.cliente_teleport = self.create_client(
+            TeleportAbsolute, '/turtle1/teleport_absolute')
+        self.cliente_caneta.wait_for_service()
+        self.cliente_teleport.wait_for_service()
+
+        # 3. Desenha
+        self.desenhar()
+
+    def usar_caneta(self, ligada, r=0, g=0, b=0, largura=2):
+        """Liga (off=0) ou desliga (off=1) a caneta da tartaruga."""
+        req = SetPen.Request()
+        req.r, req.g, req.b = r, g, b
+        req.width = largura
+        req.off = 0 if ligada else 1
+        futuro = self.cliente_caneta.call_async(req)
+        rclpy.spin_until_future_complete(self, futuro)
+
+    def ir_para(self, x, y):
+        """Teletransporta a tartaruga para a posicao (x, y)."""
+        req = TeleportAbsolute.Request()
+        req.x = float(x)
+        req.y = float(y)
+        req.theta = 0.0
+        futuro = self.cliente_teleport.call_async(req)
+        rclpy.spin_until_future_complete(self, futuro)
+
+    def desenhar(self):
+        if not self.pontos:
+            self.get_logger().warn('Nenhum ponto para desenhar.')
+            return
+
+        # Vai ate o primeiro ponto com a caneta DESLIGADA (nao risca o caminho ate la)
+        x0, y0 = self.pontos[0]
+        self.usar_caneta(False)
+        self.ir_para(x0, y0)
+
+        # Liga a caneta e percorre o contorno em ordem
+        self.usar_caneta(True)
+        for i, (x, y) in enumerate(self.pontos):
+            self.ir_para(x, y)
+            if i % 25 == 0:
+                self.get_logger().info(f'desenhando ponto {i}/{len(self.pontos)}')
+
+        self.get_logger().info('Desenho concluido.')
 
 
-SAMPLE_STEP = 15
+def main(args=None):
+    rclpy.init(args=args)
+    no = TurtleController()
+    no.destroy_node()
+    rclpy.shutdown()
 
-IMAGE_PATH = "../../../../img/dog_processed.png"
 
-img = cv2.imread(IMAGE_PATH)
-
-if img is None:
-    print("Could not read image.")
-    exit()
-
-height, width, _ = img.shape
-
-b = img[:, :, 0]
-g = img[:, :, 1]
-r = img[:, :, 2]
-
-mask = (r > 200) & (g > 200) & (b < 120)
-if mask.sum() == 0:
-    intensity = r.astype(np.int32) + g.astype(np.int32) + b.astype(np.int32)
-    mask = intensity > 400
-
-ys, xs = np.where(mask)
-edge_points = np.column_stack((xs, ys))
-
-print("Total edge pixels found:", len(edge_points))
-
-edge_points = edge_points[::SAMPLE_STEP]
-
-print("Sampled points:", len(edge_points))
-
-if len(edge_points) == 0:
-    print("No edge points detected.")
-    exit()
-
-ordered = [tuple(edge_points[0])]
-remaining = [tuple(p) for p in edge_points[1:]]
-
-while remaining:
-    last = ordered[-1]
-    nearest = min(
-        remaining,
-        key=lambda p: (p[0] - last[0]) ** 2 + (p[1] - last[1]) ** 2,
-    )
-    ordered.append(nearest)
-    remaining.remove(nearest)
-
-points = []
-
-for x, y in ordered:
-    tx = (x / width) * 11.0
-    ty = 11.0 - (y / height) * 11.0
-    points.append((tx, ty))
-
-rospy.init_node("image_tracer")
-
-rospy.Subscriber("/turtle1/pose", Pose, pose_callback)
-
-pub = rospy.Publisher("/turtle1/cmd_vel", Twist, queue_size=10)
-
-rate = rospy.Rate(60)
-
-def move_to_goal(x_goal, y_goal):
-    global pose
-
-    vel = Twist()
-
-    while not rospy.is_shutdown():
-        dx = x_goal - pose.x
-        dy = y_goal - pose.y
-
-        distance = np.sqrt(dx * dx + dy * dy)
-
-        # Reached target
-        if distance < 0.05:
-            break
-
-        target_angle = np.arctan2(dy, dx)
-
-        angle_error = target_angle - pose.theta
-
-        # Normalize angle
-        while angle_error > np.pi:
-            angle_error -= 2 * np.pi
-
-        while angle_error < -np.pi:
-            angle_error += 2 * np.pi
-
-        vel.linear.x = 2.0 * distance
-        vel.angular.z = 8.0 * angle_error
-
-        pub.publish(vel)
-
-        rate.sleep()
-
-    vel.linear.x = 0
-    vel.angular.z = 0
-
-    pub.publish(vel)
-
-while pose is None and not rospy.is_shutdown():
-    rospy.sleep(0.1)
-
-print("Starting trace...")
-
-for x, y in points:
-
-    if rospy.is_shutdown():
-        break
-
-    move_to_goal(x, y)
-
-print("Finished tracing.")
+if __name__ == '__main__':
+    main()
