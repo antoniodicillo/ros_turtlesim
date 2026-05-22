@@ -1,0 +1,20 @@
+running egg_info
+writing ../../build/turtle/turtle.egg-info/PKG-INFO
+writing dependency_links to ../../build/turtle/turtle.egg-info/dependency_links.txt
+writing entry points to ../../build/turtle/turtle.egg-info/entry_points.txt
+writing requirements to ../../build/turtle/turtle.egg-info/requires.txt
+writing top-level names to ../../build/turtle/turtle.egg-info/top_level.txt
+reading manifest file '../../build/turtle/turtle.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/turtle/turtle.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/antonio/Desktop/ros_turtlesim/install/turtle/lib/python3.12/site-packages/turtle-0.0.0-py3.12.egg-info' (and everything under it)
+Copying ../../build/turtle/turtle.egg-info to /home/antonio/Desktop/ros_turtlesim/install/turtle/lib/python3.12/site-packages/turtle-0.0.0-py3.12.egg-info
+running install_scripts
+Installing turtle_draw script to /home/antonio/Desktop/ros_turtlesim/install/turtle/lib/turtle
+writing list of installed files to '/home/antonio/Desktop/ros_turtlesim/build/turtle/install.log'

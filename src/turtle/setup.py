@@ -10,6 +10,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name, ['resource/points.json']),  # <-- add this
     ],
     package_data={'': ['py.typed']},
     install_requires=['setuptools'],
@@ -19,13 +20,11 @@ setup(
     description='TODO: Package description',
     license='Apache-2.0',
     extras_require={
-        'test': [
-            'pytest',
-        ],
+        'test': ['pytest'],
     },
     entry_points={
         'console_scripts': [
-            'circle_node = turtle.turtle:main',
+            'turtle_draw = turtle.turtle:main',  # <-- renamed to be clearer
         ],
     },
 )
